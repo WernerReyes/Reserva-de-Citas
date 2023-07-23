@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar con Bootstrap</title>
+
+  <!--- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+
+  <!-- FUENTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;500;800&display=swap" rel="stylesheet">
+   
+  <!-- ICONOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+<body class="index">
+
+    <!-- SIDEBAR -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+          <div class="p-4 mx-auto" style="border-radius: 50%; background: #00B393">
+            <img src="img/reservado.png" width="100px" height="100px">
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="margin-top: -140px;"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="container">
+            <div class="d-flex justify-content-center active py-2" style="cursor: pointer;" >
+              <i class="bi bi-calendar-day-fill mx-1"></i>
+              <a class="mx-1">Reservar</a>
+            </div>
+            <div class="d-flex justify-content-center py-2">
+              <i class="bi bi-calendar2-check-fill mx-1"></i>
+              <a href="reservas.html" class="mx-1">Reservas</a>
+          </div>
+          </div>
+        </div>
+      </div>
+    <!-- FIN SEDEBAR -->
+
+    <!-- FORMULARIO -->
+    <div class="container d-flex align-items-center justify-content-center py-3" style="max-width: 600px; height: 100%">
+        <form id="formulario" class="mx-auto p-4 my-auto">
+          <div class="d-flex justify-content-between">
+            <h2 class="mb-4">Datos de la reserva</h2>
+            <div class="d-flex align-items-center p-3" style="border-radius: 50%; background: #00B393; cursor: pointer">
+              <img src="img/reservado.png" class="btn-sidebar" width="50px" height="50px" onclick="mostrarSideber()">
+            </div>
+          </div>
+          <div class="datos-cliente">
+            <h4>Datos del cliente</h4>
+          <div class="d-flex justify-content-center">
+            <div class="form-group mx-3">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre-cliente" class="form-control" placeholder="Ingrese su nombre">
+              </div>
+              <div class="form-group mx-3">
+                <label for="email">Apellidos:</label>
+                <input type="text" id="apellidos-cliente" class="form-control" placeholder="Ingrese sus apellidos">
+              </div>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <div class="form-group mx-3">
+                    <label for="nombre">Teléfono:</label>
+                    <input type="text" id="telefono-cliente" class="form-control" placeholder="Ingrese su telefono">
+                  </div>
+                  <div class="form-group mx-3">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email-cliente" class="form-control" placeholder="Ingrese su email">
+                  </div>
+            </div>
+            <div class="form-group mx-4 mt-3">
+                <label for="email">Dirección:</label>
+                <input type="text" id="direccion-cliente" class="form-control" placeholder="Ingrese su dirección">
+              </div>
+          </div>
+
+          <div class="datos-mascota mt-4">
+            <h4>Datos de la mascota</h4>
+          <div class="d-flex justify-content-center">
+            <div class="form-group mx-3">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre-mascota" class="form-control" placeholder="Ingrese el nombre">
+              </div>
+              <div class="form-group mx-3">
+                <label for="email">Raza:</label>
+                <input type="text" id="raza-mascota" class="form-control" placeholder="Ingrese la raza">
+              </div>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <div class="form-group mx-3">
+                    <label for="nombre">Edad:</label>
+                    <input type="text" id="edad-mascota" class="form-control" placeholder="Ingrese la edad">
+                  </div>
+                  <div class="form-group mx-3">
+                    <label for="email">Tipo:</label>
+                    <input type="text" id="tipo-mascota" class="form-control" placeholder="Ingrese el tipo">
+                  </div>
+            </div>
+            <div class="form-group mx-4">
+                <label for="sexo">Sexo:</label>
+                <select id="sexo-mascota" class="form-control">
+                  <option value="">Seleccione...</option>
+                  <option value="macho">Macho</option>
+                  <option value="hembra">Hembra</option>
+                </select>
+              </div>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-warning btn-block mt-3">Reservar</button>
+          </div>
+        </form>
+      </div>
+    <!-- FIN FORMULARIO -->
+
+    <script src="js/bootstrap.min.js"></script>
+    <script type="module" src="js/index.js"></script>
+    <script>
+      const sidebar = new bootstrap.Offcanvas(document.querySelector('.offcanvas'));
+
+     // Abrimos el sidebar
+     const mostrarSideber = () => sidebar.toggle();
+    </script>
+</body>
+</html>

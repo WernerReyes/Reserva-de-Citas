@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar con Bootstrap</title>
+
+  <!--- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="css/index.css"> -->
+  <link rel="stylesheet" href="css/reservas.css">
+
+  <!-- FUENTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;800&family=Roboto:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- ICONOS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+          <div class="p-4 mx-auto" style="border-radius: 50%; background: #00B393">
+            <img src="img/reservado.png" width="100px" height="100px">
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="margin-top: -140px;"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="container">
+            <div class="d-flex justify-content-center py-2" style="cursor: pointer;" >
+              <i class="bi bi-calendar-day-fill mx-1"></i>
+              <a href="index.html" class="mx-1">Reservar</a>
+            </div>
+            <div class="d-flex justify-content-center active py-2" style="cursor: pointer;" >
+              <i class="bi bi-calendar2-check-fill mx-1"></i>
+              <a class="mx-1">Reservas</a>
+          </div>
+          </div>
+        </div>
+      </div>
+    <!-- FIN SEDEBAR -->
+
+    <!-- CONTENIDO -->
+    <div class="container" id="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between m-3 align-items-center">
+          <div class="d-flex align-items-center mb-3 mb-md-0">
+            <div class="p-3" style="border-radius: 50%; background: #CADAE5; cursor:pointer" onclick="mostrarSideber()">
+              <img src="img/reservado.png" width="40px" height="40px">
+            </div>
+            <h2 class="mb-0 mx-2">Servicios</h2>
+          </div>
+          <div style="width: 300px">
+            <input type="search" class="form-control" placeholder="Buscar por código" id="buscar-cliente">
+          </div>
+        </div>
+
+        <div class="contenedor mt-5">
+            <h4 class="m-3">Servicios</h4>
+          <div class="overflow-auto">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nro.</th>
+                        <th scope="col">código</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Fecha registro</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr class="text-center">
+                        <td scope="row">1</d>
+                        <td>R0100</td>
+                        <td>Mark</td>
+                        <td>21-07-2023</td>
+                        <td>San carlos</td>
+                        <td>correo@correo.com</td>
+                        <td>893456674</td>
+                        <td>
+                            <div class="d-flex justify-content-center">
+                                <i class="bi bi-pencil-square"></i>
+                                <i class="bi bi-x-circle mx-2"></i>
+                                <i class="bi bi-book" onclick="abrirModal()"></i>
+                            </div>
+                        </td>
+                      </tr> -->
+                </tbody>
+            </table>
+        </div>
+        <nav class="d-flex justify-content-end mx-4 nav-pagination">
+          <ul class="pagination">
+            <!-- <li class="page-item disabled">
+              <a class="page-link">Anterior</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li> -->
+          </ul>
+        </nav>
+        </div>
+      </div>
+      <!-- FIN CONTENIDO -->
+
+      <!-- MODAL -->
+      <div class="modal fade" id="modal-detalles" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <h2 class="modal-title text-center mt-5">Detalles de las reserva</h2>
+            <div class="modal-body">
+              <div class="container">
+                <!-- <div class="row justify-content-center mx-2">
+                  <div class="col mx-2">
+                    <p class="mb-0">Codigo:</p>
+                    <p class="dato">R101</p>
+                  </div>
+                  <div class="col mx-2">
+                    <p class="mb-0">Fecha:</p>
+                    <p class="dato">20-12-2023</p>
+                  </div>
+                </div>
+                <div class="row justify-content-center mt-3 mx-2">
+                  <div class="col-12 col-md-auto mx-2 mb-3 mb-md-0 pt-2">
+                    <p><b>DUEÑO:</b> Werner</p>
+                    <p><b>DIRECCIÓN:</b> Chorrillos</p>
+                    <p><b>TELEFONO:</b> 987654322</p>
+                    <p><b>EMAIL:</b> 1245</p>
+                  </div>
+                  <div class="col-12 col-md-auto mx-2 mb-3 mb-md-0 pt-2">
+                    <p><b>MASCOTA:</b> Werner</p>
+                    <p><b>RAZA:</b> Chorrillos</p>
+                    <p><b>SEXO:</b> 987654322</p>
+                    <p><b>TIPO:</b> 1245</p>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+            <div class="text-center mb-5">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="js/reservas.js"></script>
+    <script>
+      const sidebar = new bootstrap.Offcanvas(document.querySelector('.offcanvas'));
+
+     // Abrimos el sidebar
+     const mostrarSideber = () => sidebar.toggle();
+    </script>
+</body>
+</html>

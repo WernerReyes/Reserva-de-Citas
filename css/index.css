@@ -1,0 +1,95 @@
+body {
+    background-image: linear-gradient(to bottom, #00B393 40%, #CADAE5 40%);
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* SIDEBAR */
+.offcanvas-body .container {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+}
+
+.offcanvas-body .container .active {
+    background-color: #eae5e5;
+    width: 100%;
+    
+}
+
+.offcanvas-body .container i {
+    font-size: 20px;
+}
+
+.offcanvas-body .container a {
+    font-size: 20px;
+    font-family: 'Baloo Chettan 2';
+    font-weight: 800;
+    text-decoration: none;
+    color: #000;
+}
+
+/* FIN SIDEBAR */
+
+/* FORMULARIO */
+#formulario {
+    box-shadow: 20px 20px 100px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    font-family: 'Baloo Chettan 2';
+    font-weight: 400;
+    background: #FFF;
+}
+
+#formulario h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 35px;
+    color: #000;
+}
+
+#formulario h4 {
+    font-size: 25px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.68);
+}
+
+#formulario label {
+    text-align: center;
+    font-size: 20px;
+    color: #000;
+}
+
+#formulario input,
+#formulario select {
+    border: 1px solid #000;
+    background: #FFF;
+    border-radius: 8px;
+}
+
+#formulario button {
+    background: #05726B;
+    width: 176px;
+    height: 46px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFF;
+}
+/* FIN FORMULARIO */
+
+@media (max-width: 450px) {
+    body {
+      height: 100vh;
+      overflow: auto;
+    }
+  }
+
+  @media (max-width: 380px) {
+    body.index {
+      height: 100%;
+      overflow: auto;
+    }
+  }
+
+
