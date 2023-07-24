@@ -53,6 +53,8 @@ import Funciones from "./classes/Funciones.js";
       // Creamos el HTML
       ui.crearFilasHTML(registros, tbodyCliente);
 
+      if( registros.length  ) {
+
       // Calculamos el total de paginas
       paginasMostrar = funciones.calcularPaginas(registros.length);
 
@@ -68,6 +70,7 @@ import Funciones from "./classes/Funciones.js";
       const paginaSiguiente = document.querySelector(".siguiente");
       siguienteAnterior(paginaAnterior, paginacionDiv);
       siguienteAnterior(paginaSiguiente, paginacionDiv);
+      }
     } catch (error) {
       console.log(error);
     }
